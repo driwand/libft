@@ -6,7 +6,7 @@
 /*   By: abkssiba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 15:16:42 by abkssiba          #+#    #+#             */
-/*   Updated: 2019/10/16 18:24:14 by abkssiba         ###   ########.fr       */
+/*   Updated: 2019/10/17 17:35:05 by abkssiba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,13 @@
 
 void *ft_memcpy(void *dst, const void *src, size_t n)
 {
-	size_t	i;
-
-	i = 0;
-	n = 0;
-	while (*(char*)src)
+	while (n > 0)
 	{
-		*(char*)dst = *(char*)src;
+		*(unsigned char*)dst = *(unsigned char*)src;
 		dst++;
 		src++;
+		n--;
 	}
 	return (dst);
 }
-/*
-int main()
-{
-	char r[5] = "hello";
-	char t[5] = "world";
-	ft_memcpy(r, t, 5);
-	printf("%s", r);
-}*/
+
