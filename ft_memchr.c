@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abkssiba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/18 11:28:56 by abkssiba          #+#    #+#             */
-/*   Updated: 2019/10/18 18:25:26 by abkssiba         ###   ########.fr       */
+/*   Created: 2019/10/18 20:22:29 by abkssiba          #+#    #+#             */
+/*   Updated: 2019/10/18 20:41:25 by abkssiba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	void *s;
+	unsigned char *str;
 
-	s = malloc(count * size);
-	if (s)
-		ft_bzero(s, count * size);
-	return (s);
+	str = (unsigned char*)s;
+	while (*str && n--)
+	{
+		if (*str == (unsigned char)c)
+			return str;
+		str++;
+	}
+	if (*str == '\0')
+		return (NULL);
+	return (NULL);
 }
