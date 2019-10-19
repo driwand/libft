@@ -12,9 +12,10 @@
 
 SRCS = libc
 NAME = libft.a
+FLAGS = -Wall -Wextra -Werror
 
 all:
-	gcc -Wall -Wextra -Werror -c ft_*.c -std=c99
+	gcc $(FLAGS) -c ft_*.c -std=c99
 	ar rcs libft.a *.o
 
 $(NAME): all
