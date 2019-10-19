@@ -6,7 +6,7 @@
 /*   By: abkssiba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 11:39:56 by abkssiba          #+#    #+#             */
-/*   Updated: 2019/10/18 20:32:26 by abkssiba         ###   ########.fr       */
+/*   Updated: 2019/10/19 12:37:39 by abkssiba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ int main(void)
 	// printf("\033[1;31m");
 	// printf("*** ft_memcmp ***\n");
 	// printf("\033[0m");
-	// char *e1 = "ahello";
-	// char *e2 = "zworld";
-	// printf("%d\n", memcmp(e1, e2, 1));
+	// char *e1 = "atoms\0\0\0\0";
+	// char *e2 = "atoms\0abc";
+	// printf("%d\n", ft_memcmp(e1, e2, 8));
 
 	// // ft_strchr
 	// printf("\033[1;31m");
@@ -64,20 +64,20 @@ int main(void)
 	// printf("\033[0m");
 
 	// // ft_memchr
-	//printf("\033[1;31m");
+	// printf("\033[1;31m");
 	// printf("*** ft_memchr ***\n");
-	//printf("\033[0m");
-	// char *b = "hello";
-	// ft_memchr(b, 'e', 5);
-	// printf("%p\n",ft_memchr(b, 'e', 5));
+	// printf("\033[0m\n");
+	// char *b = "hello world";
+	// printf("%s\n",memchr(b, '\0', 12));
 
 	// ft_strnstr
 	printf("\033[1;31m");
 	printf("*** ft_strnstr ***\n");
 	printf("\033[0m");
-	char *big = "helpo";
-	char *little = "l";
-	printf("%s\n",strnstr(big, little, 2));
+	char *big =    "123456789";
+	char *little = "9";
+	printf("%s\n",ft_strnstr(big, little, 7));
+
 
 	// // ft_strdup
 	// char t[6] = "hello";
