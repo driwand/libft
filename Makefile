@@ -21,6 +21,7 @@ all: cp
 cp:
 	cp $(SRCS)/ft_*.c .
 	cp Part2_Funcs/ft_*.c .
+	cp bonus/ft_*.c .
 
 $(NAME): all
 

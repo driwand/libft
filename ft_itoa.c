@@ -16,22 +16,44 @@ int     ft_get_len(int n)
 {
     int len;
 
-    len = 1;
-    while ((n / 10) > 9)
+    len = 0;
+    if (n < 0)
     {
-        
+        n *= -1;
+        len++;
+    }
+    while (n > 0)
+    {
         n = n / 10;
         len++;
-    }printf(" %d ",len);
-    
+    }
     return (len);
 }
 
 char    *ft_itoa(int n)
 {
-    int tem;
+    int len;
+    char *str;
+    int last;
+    int sign;
 
-    tem = n;
-    ft_get_len(n);
-    return NULL;
+    sign = 1;
+    last = 0;
+    len = ft_get_len(n);
+    last = len;
+    str = (char*)malloc(len + 1);
+    if (n < 0)
+    {
+        sign = -1;
+        n *= -1;
+    }
+    while (len--)
+    {
+        str[len] = n % 10 + '0';
+        n = n / 10;
+    }
+    if (sign == -1 && !++len)
+        str[len] = '-';
+    str[last] = '\0';
+    return (str);
 }

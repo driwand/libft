@@ -37,5 +37,5 @@ int main()
 	printf("*** ft_itoa ***\n");
 	printf("\033[0m");
 
-	ft_itoa(123);
+	printf("%s",ft_itoa(-12399));
 }
