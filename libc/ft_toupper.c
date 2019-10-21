@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abkssiba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/19 17:04:50 by abkssiba          #+#    #+#             */
-/*   Updated: 2019/10/19 17:04:52 by abkssiba         ###   ########.fr       */
+/*   Created: 2019/10/16 19:47:43 by abkssiba          #+#    #+#             */
+/*   Updated: 2019/10/16 19:49:14 by abkssiba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_substr(char const *s, unsigned int start, size_t len)
+int	ft_toupper(int c)
 {
-    char *str;
-    char *p;
-    char *r;
-
-
-    if (!(str = (char *)malloc(len + 1)) || !s)
-        return (str);
-    p = (char*)(s + start);
-    r = str;
-    while (*p && len--)
-        *str++ = *p++;
-    *str = '\0';
-    return (r);
+	if (c >= 'a' && c <= 'z')
+		c -= 32;
+	return (c);
 }

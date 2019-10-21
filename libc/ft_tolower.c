@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abkssiba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/19 17:04:50 by abkssiba          #+#    #+#             */
-/*   Updated: 2019/10/19 17:04:52 by abkssiba         ###   ########.fr       */
+/*   Created: 2019/10/16 19:49:33 by abkssiba          #+#    #+#             */
+/*   Updated: 2019/10/16 19:51:08 by abkssiba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_substr(char const *s, unsigned int start, size_t len)
+int	ft_tolower(int c)
 {
-    char *str;
-    char *p;
-    char *r;
-
-
-    if (!(str = (char *)malloc(len + 1)) || !s)
-        return (str);
-    p = (char*)(s + start);
-    r = str;
-    while (*p && len--)
-        *str++ = *p++;
-    *str = '\0';
-    return (r);
+	if (c >= 'A' && c <= 'Z')
+		c += 32;
+	return (c);
 }

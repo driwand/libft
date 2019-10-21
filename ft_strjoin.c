@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abkssiba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/19 17:04:50 by abkssiba          #+#    #+#             */
-/*   Updated: 2019/10/19 17:04:52 by abkssiba         ###   ########.fr       */
+/*   Created: 2019/10/19 20:36:02 by abkssiba          #+#    #+#             */
+/*   Updated: 2019/10/19 20:36:04 by abkssiba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_substr(char const *s, unsigned int start, size_t len)
+char    *ft_strjoin(char const *s1, char const *s2)
 {
     char *str;
-    char *p;
-    char *r;
-
-
-    if (!(str = (char *)malloc(len + 1)) || !s)
-        return (str);
-    p = (char*)(s + start);
-    r = str;
-    while (*p && len--)
-        *str++ = *p++;
-    *str = '\0';
-    return (r);
+    size_t len_d;
+    size_t len_s;
+    
+    if( !s2 || !s1)
+        return (NULL);
+    len_d = ft_strlen(s1);
+    len_s = ft_strlen(s2);
+    str = (char*)malloc(len_d + len_s + 1);
+    if(!str)
+        return (NULL);
+    ft_memmove(str, s1, len_s + len_d);
+    ft_memmove(str + len_d, s2, len_s);
+    str[len_s + len_d] = '\0';
+    return (str);
 }

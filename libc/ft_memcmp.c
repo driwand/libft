@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abkssiba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/19 17:04:50 by abkssiba          #+#    #+#             */
-/*   Updated: 2019/10/19 17:04:52 by abkssiba         ###   ########.fr       */
+/*   Created: 2019/10/19 11:21:54 by abkssiba          #+#    #+#             */
+/*   Updated: 2019/10/19 11:22:31 by abkssiba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_substr(char const *s, unsigned int start, size_t len)
+int     ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-    char *str;
-    char *p;
-    char *r;
+    unsigned char *str1;
+    unsigned char *str2;
 
-
-    if (!(str = (char *)malloc(len + 1)) || !s)
-        return (str);
-    p = (char*)(s + start);
-    r = str;
-    while (*p && len--)
-        *str++ = *p++;
-    *str = '\0';
-    return (r);
+    str1 = (unsigned char*)s1;
+    str2 = (unsigned char*)s2;
+    while (n--)
+    {
+        if (*str1 != *str2)
+            return (*str1 - *str2);
+        str1++;
+        str2++;
+    }
+    return (0);
 }

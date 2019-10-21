@@ -70,22 +70,23 @@ int main(void)
 	// char *b = "hello world";
 	// printf("%s\n",memchr(b, '\0', 12));
 
-	// ft_strnstr
+	//ft_strnstr
 	printf("\033[1;31m");
 	printf("*** ft_strnstr ***\n");
 	printf("\033[0m");
 	char *big =    "123456789";
 	char *little = "9";
-	printf("%s\n",ft_strnstr(big, little, 7));
+	printf("%s\n",ft_strnstr(big, little, 9));
 
 
 	// // ft_strdup
 	// char t[6] = "hello";
 
 	// // ft_bzero
-	//printf("\033[1;31m");
+	// printf("\033[1;31m");
 	// printf("*** ft_bzero ***\n");
-	//printf("\033[0m");
+	// printf("\033[0m");
+	
 	// int *arr = malloc(4 * sizeof(int));
 	// for (int i = 0; i < 4; i++)
 	// 	arr[i] = 1;

@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abkssiba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/19 17:04:50 by abkssiba          #+#    #+#             */
-/*   Updated: 2019/10/19 17:04:52 by abkssiba         ###   ########.fr       */
+/*   Created: 2019/10/21 18:28:08 by abkssiba          #+#    #+#             */
+/*   Updated: 2019/10/21 18:28:09 by abkssiba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_substr(char const *s, unsigned int start, size_t len)
+int     ft_get_len(int n)
 {
-    char *str;
-    char *p;
-    char *r;
+    int len;
 
+    len = 1;
+    while ((n / 10) > 9)
+    {
+        
+        n = n / 10;
+        len++;
+    }printf(" %d ",len);
+    
+    return (len);
+}
 
-    if (!(str = (char *)malloc(len + 1)) || !s)
-        return (str);
-    p = (char*)(s + start);
-    r = str;
-    while (*p && len--)
-        *str++ = *p++;
-    *str = '\0';
-    return (r);
+char    *ft_itoa(int n)
+{
+    int tem;
+
+    tem = n;
+    ft_get_len(n);
+    return NULL;
 }
