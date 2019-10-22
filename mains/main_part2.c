@@ -25,14 +25,14 @@ int main()
 	// char *little = "world";
 	// printf("%s\n",ft_strjoin(big, little));
 
-	// ft_strtrim
-	printf("\033[1;31m");
-	printf("*** ft_strtrim ***\n");
-	printf("\033[0m");
+	// // ft_strtrim
+	// printf("\033[1;31m");
+	// printf("*** ft_strtrim ***\n");
+	// printf("\033[0m");
 
-	char *s1 = "babababa";
-	char *s2 = "ba";
-	printf("%s\n",ft_strtrim(s1, "ab"));
+	// char *s1 = "\t   s       k\n";
+	// char *s2 = "";
+	// printf("%s\n",ft_strtrim(s1, "\t\n "));
 
 	// // ft_itoa
 	// printf("\033[1;31m");

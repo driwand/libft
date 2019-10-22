@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int     ft_get_len(int n)
+static int     ft_get_len(int n)
 {
     int len;
 
@@ -30,18 +30,9 @@ int     ft_get_len(int n)
     return (len);
 }
 
-char    *ft_itoa(int n)
+static void    ft_fill(char *str, int nbr, int sign, int len)
 {
-    int len;
-    char *str;
-    int last;
-    int sign;
-
-    sign = 1;
-    last = 0;
-    len = ft_get_len(n);
-    last = len;
-    str = (char*)malloc(len + 1);
+    long int n = nbr;
     if (n < 0)
     {
         sign = -1;
@@ -54,6 +45,26 @@ char    *ft_itoa(int n)
     }
     if (sign == -1 && !++len)
         str[len] = '-';
+}
+
+char    *ft_itoa(int n)
+{
+    int len;
+    char *str;
+    int last;
+    int sign;
+
+    sign = 1;
+    len = ft_get_len(n);
+    last = len;
+    str = (char*)malloc(len + 1);
+    if (!str)
+        return 0;
+    if (n == -2147483648)
+        return ft_strdup("-2147483648");
+    if (n == 0)
+        return ft_strdup("0");
+    ft_fill(str, n, sign, len);
     str[last] = '\0';
     return (str);
 }

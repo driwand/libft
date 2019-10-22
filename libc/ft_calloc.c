@@ -6,7 +6,7 @@
 /*   By: abkssiba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 11:28:56 by abkssiba          #+#    #+#             */
-/*   Updated: 2019/10/18 18:25:26 by abkssiba         ###   ########.fr       */
+/*   Updated: 2019/10/22 20:16:05 by abkssiba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,3 @@ void	*ft_calloc(size_t count, size_t size)
 		ft_bzero(s, count * size);
 	return (s);
 }
-

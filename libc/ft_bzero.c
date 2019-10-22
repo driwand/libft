@@ -6,7 +6,7 @@
 /*   By: abkssiba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 14:14:32 by abkssiba          #+#    #+#             */
-/*   Updated: 2019/10/17 15:42:32 by abkssiba         ###   ########.fr       */
+/*   Updated: 2019/10/22 20:15:42 by abkssiba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,3 @@ void	ft_bzero(void *s, size_t n)
 		str++;
 	}
 }
-/*
-int main()
-{
-	char r[] = "hello";
-	ft_bzero(r, 9);
-	printf("%s",r);
-	return 0;
-}*/
