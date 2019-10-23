@@ -6,7 +6,7 @@
 /*   By: abkssiba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 10:48:19 by abkssiba          #+#    #+#             */
-/*   Updated: 2019/10/17 14:36:53 by abkssiba         ###   ########.fr       */
+/*   Updated: 2019/10/23 16:24:07 by abkssiba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *str)
 {
-	size_t	iss;
-	unsigned long		number;
-	int 	sign;
+	size_t			iss;
+	unsigned long	number;
+	int				sign;
 
 	iss = 0;
 	number = 0;
