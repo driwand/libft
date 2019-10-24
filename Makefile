@@ -6,7 +6,7 @@
 #    By: abkssiba <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/16 11:35:54 by abkssiba          #+#    #+#              #
-#    Updated: 2019/10/23 18:54:27 by abkssiba         ###   ########.fr        #
+#    Updated: 2019/10/23 20:44:00 by abkssiba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,10 @@ SRCS = 	ft_atoi.c \
 		ft_substr.c \
 		ft_tolower.c \
 		ft_toupper.c \
-		ft_lstdelone.c 
+		ft_lstdelone.c \
+	   	ft_strmapi.c \
+		ft_lstiter.c \
+		ft_lstmap.c
 CC = gcc
 NAME = libft.a
 FLAGS = -Wall -Wextra -Werror -c -std=c99
