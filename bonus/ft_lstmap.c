@@ -29,29 +29,4 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *))
         return (new);
     }
     return (NULL);
-    // t_list  *new_lst;
-    // t_list *head;
-    // t_list *prev;
-
-    // int     size;
-    // if (!lst && !f && !del)
-    //     return (NULL);
-    
-    // size = ft_lstsize(lst);
-    // new_lst = ft_lstnew(f(lst->content));
-    // head = new_lst;
-    // prev = lst;
-    // lst = lst->next;
-    // del(prev->content);
-    // free(prev);
-    // while (lst)
-    // {
-    //     new_lst->next = ft_lstnew(f(lst->content));
-    //     prev = lst;
-    //     lst = lst->next;
-    //     del(prev->content);
-    //     free(prev);
-    // }
-    // new_lst -> next = NULL;
-    // return (head);
 }

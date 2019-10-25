@@ -35,20 +35,14 @@ int main()
 	// printf("%s", last -> content);
     // return (0);
 
-	// // ft_lstadd_back
-	// t_list *ls;
-	// t_list *lb;
-	// ls = ft_lstnew("A");
-	// lb = ft_lstnew("B");
-	// ft_lstadd_back(&ls , lb);
-	// while(ls){
-	// 	printf("%s", ls -> content);
-	// 	ls = ls -> next;
-	// }
-
-	// ft_lstdelone
-	printf("\033[1;31m");
-	printf("*** ft_lstdelone ***\n");
-	printf("\033[0m");
-	
+	// ft_lstadd_back
+	t_list *ls;
+	t_list *lb;
+	ls = ft_lstnew("A");
+	lb = ft_lstnew("B");
+	ft_lstadd_back(&ls , lb);
+	while(ls){
+		printf("%s", ls -> content);
+		ls = ls -> next;
+	}
 }

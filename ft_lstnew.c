@@ -14,12 +14,10 @@
 
 t_list *ft_lstnew(void *content)
 {
-    t_list *newlist;
+	t_list *new;
 
-    newlist = malloc(sizeof(newlist));
-    if (!newlist)
-        return (NULL);
-    newlist -> content = ft_strdup(content);
-    newlist -> next = NULL;
-    return (newlist);
+	if (!(new = (t_list *)ft_calloc(sizeof(t_list), 1)))
+		return (NULL);
+	new->content = ft_strdup(content);
+	return (new);
 }

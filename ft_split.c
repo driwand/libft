@@ -57,6 +57,11 @@ char			**ft_split(char const *s, char c)
 		if (j > i)
 		{
 			str[count] = (char *)malloc((j - i + 1) * sizeof(char));
+			if (!str)
+			{
+				free(str);
+				return (NULL);
+			}
 			ft_strlcpy(str[count], s + i, j - i + 1);
 			i = j - 1;
 			count++;

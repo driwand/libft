@@ -55,6 +55,8 @@ SRCS = 	ft_atoi.c \
 	   	ft_strmapi.c \
 		ft_lstiter.c \
 		ft_lstmap.c
+
+SRCSB = 
 CC = gcc
 NAME = libft.a
 FLAGS = -Wall -Wextra -Werror -c -std=c99
@@ -71,6 +73,10 @@ cp:
 	cp libc/ft_*.c .
 	cp Part2_Funcs/ft_*.c .
 	cp bonus/ft_*.c .
+
+bonus: all
+	$(CC) $(FLAGS) $(SRCS) 
+	$(AR) $(NAME) $(OBJ)
 
 clean:
 	rm -f ft_*.o
