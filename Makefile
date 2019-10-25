@@ -19,12 +19,6 @@ SRCS = 	ft_atoi.c \
 		ft_isdigit.c \
 		ft_isprint.c \
 		ft_itoa.c \
-		ft_lstadd_back.c \
-		ft_lstadd_front.c \
-		ft_lstclear.c \
-		ft_lstlast.c \
-		ft_lstnew.c \
-		ft_lstsize.c \
 		ft_memccpy.c \
 		ft_memchr.c \
 		ft_memcmp.c \
@@ -51,17 +45,24 @@ SRCS = 	ft_atoi.c \
 		ft_substr.c \
 		ft_tolower.c \
 		ft_toupper.c \
-		ft_lstdelone.c \
-	   	ft_strmapi.c \
-		ft_lstiter.c \
-		ft_lstmap.c
+	   	ft_strmapi.c
 
-SRCSB = 
+SRCSB = ft_lstadd_back_bonus.c \
+		ft_lstadd_front_bonus.c \
+		ft_lstclear_bonus.c \
+		ft_lstdelone_bonus.c \
+		ft_lstiter_bonus.c \
+		ft_lstlast_bonus.c \
+		ft_lstmap_bonus.c \
+		ft_lstnew_bonus.c \
+		ft_lstsize_bonus.c
+
 CC = gcc
 NAME = libft.a
 FLAGS = -Wall -Wextra -Werror -c -std=c99
 AR = ar rcs
 OBJ = $(SRCS:.c=.o)
+OBJB = $(SRCSB:.c=.o)
 
 all: $(NAME)
 
@@ -75,12 +76,12 @@ cp:
 	cp bonus/ft_*.c .
 
 bonus: all
-	$(CC) $(FLAGS) $(SRCS) 
-	$(AR) $(NAME) $(OBJ)
+	$(CC) $(FLAGS) $(SRCSB) 
+	$(AR) $(NAME) $(OBJB)
 
 clean:
 	rm -f ft_*.o
-	#rm -f ft_*.c
+	rm -f ft_*.c
 
 fclean: clean
 	rm -f libft.a

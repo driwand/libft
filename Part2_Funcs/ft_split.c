@@ -56,8 +56,7 @@ char			**ft_split(char const *s, char c)
 			j++;
 		if (j > i)
 		{
-			str[count] = (char *)malloc((j - i + 1) * sizeof(char));
-			if (!str)
+			if (!(str[count] = (char *)malloc(sizeof(char) * (j - i + 1))))
 			{
 				free(str);
 				return (NULL);
