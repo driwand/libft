@@ -6,7 +6,7 @@
 #    By: abkssiba <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/16 11:35:54 by abkssiba          #+#    #+#              #
-#    Updated: 2019/10/23 20:44:00 by abkssiba         ###   ########.fr        #
+#    Updated: 2019/10/26 18:22:59 by abkssiba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -80,10 +80,11 @@ bonus: all
 	$(AR) $(NAME) $(OBJB)
 
 clean:
-	rm -f ft_*.o
+	rm -f $(OBJ)
+	rm -f $(OBJB)
 	#rm -f ft_*.c
 
 fclean: clean
-	rm -f libft.a
+	rm -f $(NAME)
 
 re: fclean all

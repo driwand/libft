@@ -21,21 +21,22 @@ int main(void)
     t_list *test3;
     t_list *result;
     
-    test = ft_lstnew("a");
-    test2 = ft_lstnew("b");
-    test3 = ft_lstnew("c");
+    test = ft_lstnew(ft_strdup("a"));
+    test2 = ft_lstnew(ft_strdup(0));
+    test3 = ft_lstnew(ft_strdup("c"));
     
     ft_lstadd_back(&test, test2);
     ft_lstadd_back(&test, test3);
+    
     result = ft_lstmap(test, &func1, &del);
-
+    
     while(result){
-		printf("%s \n", result -> content);
+		printf("%s\n", result -> content);
 		result = result -> next;
 	}
-    printf("\n");
-    while(test){
-		printf("%s \n", (test -> content));
-		test = test -> next;
-	}
+    
+    // while(test){
+	// 	printf("%s \n", (test -> content));
+	// 	test = test -> next;
+	// }
 }

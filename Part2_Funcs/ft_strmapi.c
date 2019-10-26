@@ -6,7 +6,7 @@
 /*   By: abkssiba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 20:32:07 by abkssiba          #+#    #+#             */
-/*   Updated: 2019/10/24 13:55:56 by abkssiba         ###   ########.fr       */
+/*   Updated: 2019/10/26 18:07:20 by abkssiba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t		len;
 	size_t		i;
 
-	if (!s)
+	if (!s || !f)
 		return (NULL);
 	i = 0;
 	len = ft_strlen(s);
