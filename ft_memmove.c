@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abkssiba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/22 13:01:58 by abkssiba          #+#    #+#             */
-/*   Updated: 2019/10/26 14:55:30 by abkssiba         ###   ########.fr       */
+/*   Created: 2019/10/19 16:17:43 by abkssiba          #+#    #+#             */
+/*   Updated: 2019/10/23 16:07:52 by abkssiba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstnew(void *content)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-    t_list *newlist;
-
-    newlist = ft_calloc(sizeof(newlist), 1);
-    if (!newlist)
-        return (NULL);
-    newlist -> content = content;
-    newlist -> next = NULL;
-    return (newlist);
+	if (dst > src)
+	{
+		while (len--)
+		{
+			*(unsigned char*)(dst + len) = *(unsigned char*)(src + len);
+		}
+		return (dst);
+	}
+	ft_memcpy(dst, src, len);
+	return (dst);
 }

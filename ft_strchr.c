@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abkssiba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/22 13:01:58 by abkssiba          #+#    #+#             */
-/*   Updated: 2019/10/26 14:55:30 by abkssiba         ###   ########.fr       */
+/*   Created: 2019/10/18 18:33:23 by abkssiba          #+#    #+#             */
+/*   Updated: 2019/10/18 20:18:56 by abkssiba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstnew(void *content)
+char	*ft_strchr(const char *s, int c)
 {
-    t_list *newlist;
+	size_t	i;
+	char	*str;
+	size_t	len;
 
-    newlist = ft_calloc(sizeof(newlist), 1);
-    if (!newlist)
-        return (NULL);
-    newlist -> content = content;
-    newlist -> next = NULL;
-    return (newlist);
+	len = ft_strlen(s);
+	str = (char*)s;
+	i = 0;
+	while (i < len + 1)
+	{
+		if (str[i] == (char)c)
+			return (&str[i]);
+		i++;
+	}
+	return (NULL);
 }

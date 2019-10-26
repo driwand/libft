@@ -81,7 +81,7 @@ bonus: all
 
 clean:
 	rm -f ft_*.o
-	rm -f ft_*.c
+	#rm -f ft_*.c
 
 fclean: clean
 	rm -f libft.a

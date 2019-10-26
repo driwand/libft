@@ -42,12 +42,26 @@ int main()
 	// printf("%s",ft_itoa(-0));
 
 	//ft_putnbr_fd
+	// printf("\033[1;31m");
+	// printf("*** ft_putnbr_fd ***\n");
+	// printf("\033[0m");
+
+	// int r = open("kfile.txt", O_RDWR | O_CREAT , 0644);
+	// ft_putnbr_fd(2147483647, r);
+	// int c = L'ø';
+	// printf("\n %d  | %c \n",c,c);
+
+	// ft_split
 	printf("\033[1;31m");
-	printf("*** ft_putnbr_fd ***\n");
+	printf("*** ft_split ***\n");
 	printf("\033[0m");
 
-	int r = open("kfile.txt", O_RDWR | O_CREAT , 0644);
-	ft_putnbr_fd(2147483647, r);
-	int c = L'ø';
-	printf("\n %d  | %c \n",c,c);
+	char **str;
+	str = ft_split("      split       this for   me  !       ", ' ');
+	int i = 0;
+	while (str[i])
+	{
+		printf("%s\n", str[i]);
+		i++;
+	}
 }

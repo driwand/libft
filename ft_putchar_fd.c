@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abkssiba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/22 13:01:58 by abkssiba          #+#    #+#             */
-/*   Updated: 2019/10/26 14:55:30 by abkssiba         ###   ########.fr       */
+/*   Created: 2019/10/22 14:15:09 by abkssiba          #+#    #+#             */
+/*   Updated: 2019/10/23 16:20:52 by abkssiba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstnew(void *content)
+void	ft_putchar_fd(char c, int fd)
 {
-    t_list *newlist;
-
-    newlist = ft_calloc(sizeof(newlist), 1);
-    if (!newlist)
-        return (NULL);
-    newlist -> content = content;
-    newlist -> next = NULL;
-    return (newlist);
+	write(fd, &c, 1);
 }

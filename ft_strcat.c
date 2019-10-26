@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abkssiba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/22 13:01:58 by abkssiba          #+#    #+#             */
-/*   Updated: 2019/10/26 14:55:30 by abkssiba         ###   ########.fr       */
+/*   Created: 2019/10/19 11:35:51 by abkssiba          #+#    #+#             */
+/*   Updated: 2019/10/19 12:18:29 by abkssiba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstnew(void *content)
+char	*ft_strcat(char *s1, const char *s2)
 {
-    t_list *newlist;
+	int len_dest;
+	int len_src;
+	int i;
 
-    newlist = ft_calloc(sizeof(newlist), 1);
-    if (!newlist)
-        return (NULL);
-    newlist -> content = content;
-    newlist -> next = NULL;
-    return (newlist);
+	i = 0;
+	len_src = ft_strlen(s2);
+	len_dest = ft_strlen(s1);
+	while (i < len_src)
+	{
+		s1[len_dest] = s2[i];
+		i++;
+		len_dest++;
+	}
+	s1[len_dest] = '\0';
+	return (s1);
 }

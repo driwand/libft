@@ -46,6 +46,11 @@ int main()
 	// 	ls = ls -> next;
 	// }
 
+	// // ft_lstdelone
+	// printf("\033[1;31m");
+	// printf("*** ft_lstdelone ***\n");
+	// printf("\033[0m");
+
 	// ft_lstdelone
 	printf("\033[1;31m");
 	printf("*** ft_lstdelone ***\n");

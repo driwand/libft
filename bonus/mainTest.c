@@ -16,7 +16,7 @@ int main(void)
 {
     t_list *test;
     t_list *test2;
-     t_list *test3;
+    t_list *test3;
     t_list *result;
     test = ft_lstnew("a");
     test2 = ft_lstnew("b");
