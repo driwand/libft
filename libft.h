@@ -6,7 +6,7 @@
 /*   By: abkssiba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 13:01:06 by abkssiba          #+#    #+#             */
-/*   Updated: 2019/10/27 13:06:38 by abkssiba         ###   ########.fr       */
+/*   Updated: 2019/10/27 14:14:02 by abkssiba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ int					ft_lstsize(t_list *lst);
 void				ft_lstadd_front(t_list **alst, t_list *new);
 t_list				*ft_lstlast(t_list *lst);
 void				ft_lstadd_back(t_list **alst, t_list *new);
-void				ft_putnbr_fd(int n, int fd);
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 					void (*del)(void *));
