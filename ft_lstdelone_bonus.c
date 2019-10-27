@@ -1,27 +1,21 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abkssiba <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/27 11:42:38 by abkssiba          #+#    #+#             */
+/*   Updated: 2019/10/27 11:48:29 by abkssiba         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
-// static void del(void *s)
-// {
-//     free(s);
-// }
-
-void ft_lstdelone(t_list *lst, void (*del)(void*))
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-    del(lst->content);
-    free(lst);
+	if (!lst || !del)
+		return ;
+	del(lst->content);
+	free(lst);
 }
-
-// int main()
-// {
-//     t_list *lst;
-//     lst = ft_lstnew("ABC");
-//     printf("%s | %p\n", lst->content, lst->content);
-//     ft_lstdelone(lst, del);
-//     printf("%s | %p\n", lst->content, lst->content);
-//     ///printf("%s | %p\n", lst->content,lst->content);
-//     //lst -> content = "ff";
-//     //printf("%s | %p", lst->content,lst->content);
-    
-// }

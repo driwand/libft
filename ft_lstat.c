@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_lstat.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abkssiba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/19 12:31:06 by abkssiba          #+#    #+#             */
-/*   Updated: 2019/10/26 18:40:42 by abkssiba         ###   ########.fr       */
+/*   Created: 2019/10/27 11:42:05 by abkssiba          #+#    #+#             */
+/*   Updated: 2019/10/27 13:09:10 by abkssiba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+t_list	*ft_list_at(t_list *begin_list, unsigned int nbr)
 {
-	size_t	len;
-	char	*str;
+	unsigned int	i;
+	t_list			*list;
 
-	str = (char*)s;
-	len = ft_strlen(str);
-	while ((int)len >= 0)
+	i = 0;
+	list = begin_list;
+	while (list)
 	{
-		if (str[len] == (char)c)
-			return (&str[len]);
-		len--;
+		if (i == nbr)
+			return (list);
+		i++;
+		list = list->next;
 	}
 	return (NULL);
 }

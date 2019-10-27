@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_lstreverse.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abkssiba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/19 11:31:27 by abkssiba          #+#    #+#             */
-/*   Updated: 2019/10/26 18:12:11 by abkssiba         ###   ########.fr       */
+/*   Created: 2019/10/27 11:32:26 by abkssiba          #+#    #+#             */
+/*   Updated: 2019/10/27 11:35:32 by abkssiba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
+void	ft_lstreverse(t_list **begin_list)
 {
-	size_t	len_src;
-	size_t	len_dest;
-	size_t	lend;
-	int		i;
+	t_list	*curr;
+	t_list	*prev;
+	t_list	*next;
 
-	i = 0;
-	len_src = ft_strlen(src);
-	len_dest = ft_strlen(dest);
-	lend = len_dest;
-	if (size <= len_dest)
-		return (size + len_src);
-	else
+	curr = *begin_list;
+	prev = 0;
+	next = 0;
+	while (curr)
 	{
-		while (src[i] && lend < size - 1)
-			dest[lend++] = src[i++];
-		dest[lend] = '\0';
-		return (len_dest + len_src);
+		next = curr->next;
+		curr->next = prev;
+		prev = curr;
+		curr = next;
 	}
+	*begin_list = prev;
 }
