@@ -6,7 +6,7 @@
 /*   By: abkssiba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 18:28:08 by abkssiba          #+#    #+#             */
-/*   Updated: 2019/10/28 15:32:32 by abkssiba         ###   ########.fr       */
+/*   Updated: 2019/10/28 17:44:46 by abkssiba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,12 @@ char			*ft_itoa(int n)
 	sign = 1;
 	len = ft_get_len(n);
 	last = len;
+	
+	str = (char*)malloc(len + 1);
 	if (!str)
 		return (0);
 	if (n == 0)
 		return (ft_strdup("0"));
-	str = (char*)malloc(len + 1);
 	ft_fill(str, n, sign, len);
 	str[last] = '\0';
 	return (str);
