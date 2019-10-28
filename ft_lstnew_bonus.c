@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abkssiba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/19 12:25:09 by abkssiba          #+#    #+#             */
-/*   Updated: 2019/10/23 16:12:56 by abkssiba         ###   ########.fr       */
+/*   Created: 2019/10/22 13:01:58 by abkssiba          #+#    #+#             */
+/*   Updated: 2019/10/27 11:34:46 by abkssiba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+t_list	*ft_lstnew(void *content)
 {
-	char	*str1;
-	char	*str2;
-	size_t	i;
-	size_t	j;
+	t_list *newlist;
 
-	i = 0;
-	str1 = (char *)haystack;
-	str2 = (char *)needle;
-	while (str1[i])
-	{
-		j = 0;
-		while (str1[i + j] == str2[j] && str2[j] && i + j < len)
-			j++;
-		if (!str2[j])
-			return (str1 + i);
-		i++;
-	}
-	return (NULL);
+	newlist = ft_calloc(sizeof(newlist), 1);
+	if (!newlist)
+		return (NULL);
+	newlist->content = content;
+	newlist->next = NULL;
+	return (newlist);
 }

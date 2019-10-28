@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abkssiba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/22 13:01:50 by abkssiba          #+#    #+#             */
-/*   Updated: 2019/10/22 13:01:52 by abkssiba         ###   ########.fr       */
+/*   Created: 2019/10/22 13:02:11 by abkssiba          #+#    #+#             */
+/*   Updated: 2019/10/27 12:07:09 by abkssiba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstclear(t_list **lst, void (*del)(void*))
+void	ft_lstadd_front(t_list **alst, t_list *new)
 {
-    t_list *tmp;
-
-    if (!lst || !del)
-        return ;
-    while (*lst)
-    {
-        tmp = (*lst) -> next;
-        del((*lst) -> content);
-        free(*lst);
-        *lst = tmp;
-    }
+	if (!alst)
+		return ;
+	if (!*alst)
+		*alst = new;
+	else
+	{
+		new->next = *alst;
+		*alst = new;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: abkssiba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 13:03:04 by abkssiba          #+#    #+#             */
-/*   Updated: 2019/10/24 14:01:40 by abkssiba         ###   ########.fr       */
+/*   Updated: 2019/10/26 14:58:35 by abkssiba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,19 @@ static	char	**ft_get_arr(char const *str, char c)
 	return (arr);
 }
 
+static	char	**ft_free(char **str, int count)
+{
+	int i;
+
+	i = 0;
+	while (i < count + 1)
+	{
+		free(str[i++]);
+	}
+	free(str);
+	return (NULL);
+}
+
 char			**ft_split(char const *s, char c)
 {
 	char	**str;
@@ -57,13 +70,9 @@ char			**ft_split(char const *s, char c)
 		if (j > i)
 		{
 			if (!(str[count] = (char *)malloc(sizeof(char) * (j - i + 1))))
-			{
-				free(str);
-				return (NULL);
-			}
-			ft_strlcpy(str[count], s + i, j - i + 1);
+				return (ft_free(str, count));
+			ft_strlcpy(str[count++], s + i, j - i + 1);
 			i = j - 1;
-			count++;
 		}
 	}
 	str[count] = 0;

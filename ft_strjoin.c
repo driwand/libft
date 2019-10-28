@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abkssiba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/19 11:31:27 by abkssiba          #+#    #+#             */
-/*   Updated: 2019/10/23 18:48:21 by abkssiba         ###   ########.fr       */
+/*   Created: 2019/10/19 20:36:02 by abkssiba          #+#    #+#             */
+/*   Updated: 2019/10/23 16:15:32 by abkssiba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	len_src;
-	size_t	len_dest;
-	size_t	lend;
-	int		i;
+	char	*str;
+	size_t	len_d;
+	size_t	len_s;
 
-	i = 0;
-	len_src = ft_strlen(src);
-	len_dest = ft_strlen(dest);
-	lend = len_dest;
-	if (size <= len_dest)
-		return (size + len_src);
-	else
-	{
-		while (src[i] && lend < size - 1)
-			dest[lend++] = src[i++];
-		dest[lend] = '\0';
-		return (len_dest + len_src);
-	}
+	if (!s2 || !s1)
+		return (NULL);
+	len_d = ft_strlen(s1);
+	len_s = ft_strlen(s2);
+	str = (char*)ft_calloc(len_d + len_s + 1, sizeof(char*));
+	if (!str)
+		return (NULL);
+	ft_memmove(str, s1, len_s + len_d);
+	ft_memmove(str + len_d, s2, len_s);
+	return (str);
 }

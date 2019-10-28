@@ -6,7 +6,7 @@
 #    By: abkssiba <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/16 11:35:54 by abkssiba          #+#    #+#              #
-#    Updated: 2019/10/23 20:44:00 by abkssiba         ###   ########.fr        #
+#    Updated: 2019/10/27 14:13:38 by abkssiba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,9 @@ SRCS = 	ft_atoi.c \
 		ft_substr.c \
 		ft_tolower.c \
 		ft_toupper.c \
-	   	ft_strmapi.c
+	   	ft_strmapi.c \
+		ft_lstreverse.c \
+		ft_lstat.c
 
 SRCSB = ft_lstadd_back_bonus.c \
 		ft_lstadd_front_bonus.c \
@@ -59,31 +61,27 @@ SRCSB = ft_lstadd_back_bonus.c \
 
 CC = gcc
 NAME = libft.a
-FLAGS = -Wall -Wextra -Werror -c -std=c99
+FLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 OBJ = $(SRCS:.c=.o)
 OBJB = $(SRCSB:.c=.o)
 
 all: $(NAME)
 
-$(NAME): 
-	$(CC) $(FLAGS) $(SRCS) 
-	$(AR) $(NAME) $(OBJ)
+$(NAME): $(OBJ) 
+	$(AR) $(NAME) $(OBJ) 
 
-cp:
-	cp libc/ft_*.c .
-	cp Part2_Funcs/ft_*.c .
-	cp bonus/ft_*.c .
-
-bonus: all
-	$(CC) $(FLAGS) $(SRCSB) 
+bonus: all $(OBJB)
 	$(AR) $(NAME) $(OBJB)
 
+%.o:%.c
+	$(CC) $(FLAGS) -c $< -o $@
+
 clean:
-	rm -f ft_*.o
-	rm -f ft_*.c
+	rm -f $(OBJ)
+	rm -f $(OBJB)
 
 fclean: clean
-	rm -f libft.a
+	rm -f $(NAME)
 
 re: fclean all
