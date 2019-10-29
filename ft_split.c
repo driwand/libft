@@ -6,7 +6,7 @@
 /*   By: abkssiba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 13:03:04 by abkssiba          #+#    #+#             */
-/*   Updated: 2019/10/29 11:22:25 by abkssiba         ###   ########.fr       */
+/*   Updated: 2019/10/29 16:44:24 by abkssiba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,9 @@ static	char	**ft_get_arr(char const *str, char c)
 	int		i;
 	int		j;
 
-	j = 0;
 	i = 0;
 	count = 0;
-	while (str[i] != '\0')
+	while (str[i])
 	{
 		j = i;
 		while (str[j] != c && str[j] != '\0')
@@ -31,6 +30,7 @@ static	char	**ft_get_arr(char const *str, char c)
 		{
 			count++;
 			i = j;
+			continue ;
 		}
 		i++;
 	}
@@ -72,7 +72,7 @@ char			**ft_split(char const *s, char c)
 			if (!(str[count] = (char *)malloc(sizeof(char) * (j - i + 1))))
 				return (ft_free(str, count));
 			ft_strlcpy(str[count++], s + i, j - i + 1);
-			i = j;
+			i = j - 1;
 		}
 	}
 	str[count] = 0;

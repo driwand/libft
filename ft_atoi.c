@@ -6,7 +6,7 @@
 /*   By: abkssiba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 10:48:19 by abkssiba          #+#    #+#             */
-/*   Updated: 2019/10/28 15:32:47 by abkssiba         ###   ########.fr       */
+/*   Updated: 2019/10/29 16:19:26 by abkssiba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_atoi(const char *str)
 {
-	size_t	iss;
+	int		iss;
 	long	value;
 	long	number;
 	int		sign;
@@ -26,15 +26,11 @@ int	ft_atoi(const char *str)
 			&& str[iss] != '\0')
 		iss++;
 	if (str[iss] == '-' || str[iss] == '+')
-	{
-		if (str[iss] == '-')
-			sign = -1;
-		iss++;
-	}
+		(str[iss++] == '-') ? sign = -1 : 0;
 	while (ft_isdigit(str[iss]))
 	{
 		value = number;
-		number = number * 10 + sign * (str[iss++] - '0');
+		number = (number * 10) + (sign * (str[iss++] - '0'));
 		if (sign == 1 && value > number)
 			return (-1);
 		else if (sign == -1 && value < number)
