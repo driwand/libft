@@ -6,7 +6,7 @@
 /*   By: abkssiba <abkssiba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 13:01:06 by abkssiba          #+#    #+#             */
-/*   Updated: 2021/05/24 15:59:08 by abkssiba         ###   ########.fr       */
+/*   Updated: 2021/05/24 16:37:46 by abkssiba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,6 @@ void				ft_lstclear(t_list **lst, void (*del)(void*));
 void				ft_lstdelone(t_list *lst, void (*del)(void*));
 t_list				*ft_list_at(t_list *begin_list, unsigned int nbr);
 void				ft_lstreverse(t_list **begin_list);
+char				**ft_realloc(char **arr, char *line);
+int					ft_strcmp(char *s1, char *s2);
 #endif
