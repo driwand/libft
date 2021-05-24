@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abkssiba <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: abkssiba <abkssiba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 18:28:08 by abkssiba          #+#    #+#             */
-/*   Updated: 2019/10/29 11:21:05 by abkssiba         ###   ########.fr       */
+/*   Updated: 2021/05/24 16:14:55 by abkssiba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_get_len(long int n)
+static int	ft_get_len(long int n)
 {
-	int len;
+	int	len;
 
 	len = 0;
 	if (n < 0)
@@ -30,7 +30,7 @@ static int		ft_get_len(long int n)
 	return (len);
 }
 
-static void		ft_fill(char *str, long int n, int sign, int len)
+static void	ft_fill(char *str, long int n, int sign, int len)
 {
 	if (n < 0)
 	{
@@ -46,7 +46,7 @@ static void		ft_fill(char *str, long int n, int sign, int len)
 		str[len] = '-';
 }
 
-char			*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	int		len;
 	char	*str;
@@ -58,7 +58,7 @@ char			*ft_itoa(int n)
 	last = len;
 	if (n == 0)
 		return (ft_strdup("0"));
-	str = (char*)malloc(len + 1);
+	str = (char *)malloc(len + 1);
 	if (!str)
 		return (NULL);
 	ft_fill(str, n, sign, len);

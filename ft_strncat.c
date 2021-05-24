@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abkssiba <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: abkssiba <abkssiba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 13:10:21 by abkssiba          #+#    #+#             */
-/*   Updated: 2019/10/20 13:10:35 by abkssiba         ###   ########.fr       */
+/*   Updated: 2021/05/24 16:08:51 by abkssiba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strncat(char *dest, const char *src, int nb)
 {
-	int len_dest;
-	int i;
+	int	len_dest;
+	int	i;
 
 	i = 0;
 	len_dest = ft_strlen(dest);

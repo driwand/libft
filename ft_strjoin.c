@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abkssiba <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: abkssiba <abkssiba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 20:36:02 by abkssiba          #+#    #+#             */
-/*   Updated: 2019/10/23 16:15:32 by abkssiba         ###   ########.fr       */
+/*   Updated: 2021/05/24 16:09:39 by abkssiba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	len_d = ft_strlen(s1);
 	len_s = ft_strlen(s2);
-	str = (char*)ft_calloc(len_d + len_s + 1, sizeof(char*));
+	str = (char *)ft_calloc(len_d + len_s + 1, sizeof(char *));
 	if (!str)
 		return (NULL);
 	ft_memmove(str, s1, len_s + len_d);

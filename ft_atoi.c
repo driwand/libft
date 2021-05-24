@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abkssiba <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: abkssiba <abkssiba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 10:48:19 by abkssiba          #+#    #+#             */
-/*   Updated: 2019/10/29 16:19:26 by abkssiba         ###   ########.fr       */
+/*   Updated: 2021/05/24 16:03:43 by abkssiba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,11 @@ int	ft_atoi(const char *str)
 	number = 0;
 	sign = 1;
 	while ((str[iss] == ' ' || (str[iss] >= '\t' && str[iss] <= '\r'))
-			&& str[iss] != '\0')
+		&& str[iss] != '\0')
 		iss++;
 	if (str[iss] == '-' || str[iss] == '+')
-		(str[iss++] == '-') ? sign = -1 : 0;
+		if (str[iss++] == '-')
+			sign = -1;
 	while (ft_isdigit(str[iss]))
 	{
 		value = number;

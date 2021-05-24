@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abkssiba <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: abkssiba <abkssiba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 13:03:04 by abkssiba          #+#    #+#             */
-/*   Updated: 2019/10/29 16:44:24 by abkssiba         ###   ########.fr       */
+/*   Updated: 2021/05/24 15:57:37 by abkssiba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,13 @@ static	char	**ft_get_arr(char const *str, char c)
 		}
 		i++;
 	}
-	arr = (char**)malloc((count + 1) * sizeof(char*));
+	arr = (char **)malloc((count + 1) * sizeof(char *));
 	return (arr);
 }
 
 static	char	**ft_free(char **str, int count)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < count + 1)
@@ -51,17 +51,23 @@ static	char	**ft_free(char **str, int count)
 	return (NULL);
 }
 
-char			**ft_split(char const *s, char c)
+static	void	init_vars(int *i, int *count)
+{
+	*count = 0;
+	*i = -1;
+}
+
+char	**ft_split(char const *s, char c)
 {
 	char	**str;
 	int		count;
 	int		i;
 	int		j;
 
-	if (!s || !(str = ft_get_arr(s, c)))
+	str = ft_get_arr(s, c);
+	if (!s || !str)
 		return (NULL);
-	count = 0;
-	i = -1;
+	init_vars(&i, &count);
 	while (s[++i] != '\0')
 	{
 		j = i;
@@ -69,7 +75,8 @@ char			**ft_split(char const *s, char c)
 			j++;
 		if (j > i)
 		{
-			if (!(str[count] = (char *)malloc(sizeof(char) * (j - i + 1))))
+			str[count] = (char *)malloc(sizeof(char) * (j - i + 1));
+			if (!str[count])
 				return (ft_free(str, count));
 			ft_strlcpy(str[count++], s + i, j - i + 1);
 			i = j - 1;

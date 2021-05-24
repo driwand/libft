@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abkssiba <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: abkssiba <abkssiba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 12:24:29 by abkssiba          #+#    #+#             */
-/*   Updated: 2019/10/26 18:00:26 by abkssiba         ###   ########.fr       */
+/*   Updated: 2021/05/24 16:06:44 by abkssiba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static	size_t	ft_isset(char const *set, char c)
 {
-	int i;
-	int len;
+	int	i;
+	int	len;
 
 	len = ft_strlen(set);
 	i = 0;
@@ -28,7 +28,7 @@ static	size_t	ft_isset(char const *set, char c)
 	return (0);
 }
 
-char			*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*str;
 	int		start;
@@ -44,7 +44,7 @@ char			*ft_strtrim(char const *s1, char const *set)
 		end--;
 	if (end < start)
 		return (ft_strdup(""));
-	str = (char*)malloc(end - start + 2);
+	str = (char *)malloc(end - start + 2);
 	if (!str)
 		return (NULL);
 	ft_memmove(str, &s1[start], end - start + 1);

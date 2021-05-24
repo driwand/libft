@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abkssiba <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: abkssiba <abkssiba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 18:33:23 by abkssiba          #+#    #+#             */
-/*   Updated: 2019/10/18 20:18:56 by abkssiba         ###   ########.fr       */
+/*   Updated: 2021/05/24 16:09:47 by abkssiba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strchr(const char *s, int c)
 	size_t	len;
 
 	len = ft_strlen(s);
-	str = (char*)s;
+	str = (char *)s;
 	i = 0;
 	while (i < len + 1)
 	{
