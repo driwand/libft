@@ -6,13 +6,13 @@
 /*   By: abkssiba <abkssiba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/07 13:35:09 by abkssiba          #+#    #+#             */
-/*   Updated: 2021/05/24 16:27:32 by abkssiba         ###   ########.fr       */
+/*   Updated: 2021/05/24 16:40:24 by abkssiba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	arr_count(char **arr)
+static int	arr_count(char **arr)
 {
 	int	i;
 
