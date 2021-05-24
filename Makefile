@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: abkssiba <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: abkssiba <abkssiba@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/16 11:35:54 by abkssiba          #+#    #+#              #
-#    Updated: 2019/11/02 19:47:23 by abkssiba         ###   ########.fr        #
+#    Updated: 2021/05/24 16:28:30 by abkssiba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,9 @@ SRCS = 	ft_atoi.c \
 		ft_toupper.c \
 		ft_strmapi.c \
 		ft_lstreverse.c \
-		ft_lstat.c
+		ft_lstat.c \
+		ft_strcmp.c \
+		ft_realloc.c
 
 SRCSB = ft_lstadd_back_bonus.c \
 		ft_lstadd_front_bonus.c \
